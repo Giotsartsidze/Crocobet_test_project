@@ -1,0 +1,13 @@
+.list-group-item{
+    background-color: whitesmoke;
+    font-size: 20px;
+}
+.container {
+    background-color: white;
+}
+
+a{
+    width: 100%;
+    background-color: green;
+    color: white   ;
+}

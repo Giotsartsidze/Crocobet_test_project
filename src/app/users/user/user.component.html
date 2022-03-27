@@ -1,0 +1,34 @@
+<div class="container d-flex flex-wrap justify-content-center">
+    <div>
+      <div class="card me-5" style="width: 35rem">
+        <div class="card-body">
+          <p class="card-text"><b>ID:</b> {{ user?.id }}</p>
+          <p class="card-text"><b>Name:</b> {{ user?.name }}</p>
+          <p class="card-text"><b>Username:</b> {{ user?.username }}</p>
+          <p class="card-text"><b>Email:</b> {{ user?.email }}</p>
+          <p class="card-text"><b>Street: </b>{{ user?.address?.street }}</p>
+          <p class="card-text"><b>suite:</b> {{ user?.address?.suite }}</p>
+          <p class="card-text"><b>city:</b> {{ user?.address?.city }}</p>
+          <p class="card-text"><b>zipcode:</b> {{ user?.address?.zipcode }}</p>
+      
+          <p class="card-text"><b>phone:</b> {{ user?.phone }}</p>
+          <p class="card-text"><b>website:</b> {{ user?.website }}</p>
+          <p class="card-text"><b>company name:</b> {{ user?.company?.name }}</p>
+          <p class="card-text">
+            <b>company catch phrase:</b> {{ user?.company?.catchPhrase }}
+          </p>
+          <p class="card-text">
+            <b>company description:</b> {{ user?.company?.bs }}
+          </p>
+  
+          <a [routerLink]="['']" class="btn btn-outline-success">Go Back</a>
+        </div>
+        <button
+        [routerLink]="['/users', user?.id, 'posts']"
+        class="btn btn-primary">
+        See User Posts
+      </button>
+      </div>
+    </div>
+    
+  </div>
