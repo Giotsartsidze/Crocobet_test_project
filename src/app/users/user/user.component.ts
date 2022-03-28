@@ -23,15 +23,14 @@ export class UserComponent implements OnInit {
 
   ngOnInit(): void {
     // get id from url
-    const id = +this.activeRoute.snapshot.params['id'];
-
-    this.getUser(id);
-
-    // if user id is changed in url it will update user
-    this.activeRoute.params.subscribe((params: Params) => {
-      this.apiService
-        .getUser(+params['id'])
-        .subscribe((_user: any) => (this.user = _user));
-    });
+    this.activeRoute.params.subscribe((param:Params) => {
+      var id = param['id'];
+      this.getUser(id);
+      this.activeRoute.params.subscribe((params: Params) => {
+        this.apiService
+          .getUser(params['id'])
+          .subscribe((_user: any) => (this.user = _user));
+      });
+    })
   }
 }
